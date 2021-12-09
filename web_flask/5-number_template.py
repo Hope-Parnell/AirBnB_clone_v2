@@ -53,5 +53,4 @@ if __name__ == '__main__':
         """displays number using a template"""
         return render_template('5-number.html', n=n)
 
-
     app.run(host='0.0.0.0', port='5000')
