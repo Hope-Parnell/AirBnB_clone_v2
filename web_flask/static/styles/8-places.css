@@ -4,6 +4,7 @@
 	flex-wrap: wrap;
 	margin: 45px auto;
 	text-align: center;
+	align-items: flex-start;
 }
 
 article {
