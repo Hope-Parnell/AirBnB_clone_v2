@@ -49,28 +49,30 @@
 				<article>
 					<div class="headline">
 						<h2>{{ place.name }}</h2>
-						<div class="price_by_night">{{ place.price_by_night }}</div>
+						<div class="price_by_night">${{ place.price_by_night }}</div>
 					</div>
 					<div class="information">
 						<div class="max_guest">
 							<div class="guest_icon"></div>
-							<p>{{ place.max_guest }}</p>
+							<p>{{ place.max_guest }} Guest</p>
 						</div>
 						<div class="number_rooms">
 							<div class="bed_icon"></div>
-							<p>{{ place.number_rooms }}</p>
+							<p>{{ place.number_rooms }} Room</p>
 						</div>
 						 <div class="number_bathrooms">
 							<div class="bath_icon"></div>
-							<p>{{ place.number_bathrooms }}</p>
+							<p>{{ place.number_bathrooms }} Bathroom</p>
 						</div>
 					</div>
-					<div class="user"><b>Owner</b>: {{ place.user.first_name }} {{ place.user.last_name }}</div>
-					{% autoescape false %}
+					<div class="user">
+						<p><b>Owner</b>: {{ place.user.first_name }} {{ place.user.last_name }}</p>
+					</div>
 					<div class="description">
-                        {{ place.description }}
+						{% autoescape false %}
+                        <p>{{ place.description }}</p>
+						{% endautoescape %}
                     </div>
-					{% endautoescape %}
 				</article>
 				{% endfor %}
 			</section>

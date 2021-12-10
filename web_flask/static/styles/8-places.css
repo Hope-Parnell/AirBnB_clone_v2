@@ -7,6 +7,7 @@
 }
 
 article {
+	position: relative;
 	display: flex;
 	width: 390px;
 	flex: none;
@@ -29,17 +30,17 @@ article {
 	flex-direction: row;
 	position: relative;
 	justify-content: space-between;
-	height: 80px;
+	min-height: 80px;
 	width: 100%;
 }
 
 .price_by_night {
 	display: flex;
 	justify-content: center;
-	align-self: flex-end;
 
-	position: absolute;
+	position: relative;
 	right: 0;
+	top: 0;
 
 	line-height: 60px;
 	color: #FF5A5F;
@@ -78,6 +79,7 @@ article {
 }
 
 .description {
+	position: relative;
 	text-align: left;
 }
 
