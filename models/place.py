@@ -7,6 +7,8 @@ import os
 from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table
 from sqlalchemy.orm import relationship
 
+from models.user import User
+
 
 Table('place_amenity',
       Base.metadata,
@@ -52,6 +54,12 @@ class Place(BaseModel, Base):
                                  backref="place_amenities"
                                  )
     else:
+        @property
+        def user(self):
+            """getter for the owner of place"""
+            from models import storage
+            return storage.all(User).get("User.{}".format(self.user_id))
+
         @property
         def reviews(self):
             """getter for review list when using filestorage"""
