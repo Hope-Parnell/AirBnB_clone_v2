@@ -5,22 +5,22 @@
     </HEAD>
     <BODY>
         {% if states is iterable %}
-            <H1>States</H1>
-            <UL id="States">
-                {% for state in states.values() | sort(attribute="name") %}
-                <LI>State: {{ state.id }}: <B>{{ state.name }}</B></LI>
-                {% endfor %}
-            </UL>
+        <H1>States</H1>
+        <UL id="States">
+            {% for state in states.values() | sort(attribute="name") %}
+            <LI>State: {{ state.id }}: <B>{{ state.name }}</B></LI>
+            {% endfor %}
+        </UL>
         {% elif states != None %}
-            <H1>State: {{ states.name }}</H1>
-            <H3>Cities:</H3>
-            <UL id='Cities'>
-                {% for city in states.cities | sort(attribute="name") %}
-                <LI>City: {{ city.id }}: <B>{{ city.name }}</B></LI>
-                {% endfor %}
-            </UL>
+        <H1>State: {{ states.name }}</H1>
+        <H3>Cities:</H3>
+        <UL id='Cities'>
+            {% for city in states.cities | sort(attribute="name") %}
+            <LI>City: {{ city.id }}: <B>{{ city.name }}</B></LI>
+            {% endfor %}
+        </UL>
         {% else %}
-            <H1>Not Found!</H1>
+        <H1>Not Found!</H1>
         {% endif %}
     </BODY>
 </HTML>
