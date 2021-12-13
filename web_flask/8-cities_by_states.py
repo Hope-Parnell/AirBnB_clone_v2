@@ -15,7 +15,8 @@ if __name__ == '__main__':
         """
         sets the route for '/cities_by_states'
         """
-        return render_template('8-cities_by_states.html', states=storage.all(State))
+        return render_template('8-cities_by_states.html',
+                               states=storage.all(State))
 
     @app.teardown_appcontext
     def teardown(context):
