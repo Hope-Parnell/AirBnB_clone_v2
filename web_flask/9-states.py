@@ -14,7 +14,7 @@ if __name__ == '__main__':
     app.url_map.strict_slashes = False
 
     @app.route('/states')
-    def states():
+    def states_list():
         """
         sets the route for '/states
         """
@@ -22,7 +22,7 @@ if __name__ == '__main__':
                                states=storage.all(State))
 
     @app.route('/states/<id>')
-    def state(id=None):
+    def state_cities(id=None):
         """sets the route for '/states/<id>"""
         return render_template('9-states.html',
                                state=storage.all(State).get(
