@@ -22,7 +22,7 @@ if __name__ == '__main__':
                                states=storage.all(State))
 
     @app.route('/states/<id>')
-    def state(id=None):
+    def state(id):
         """sets the route for '/states/<id>"""
         return render_template('9-states.html',
                                state=storage.all(State).get(
@@ -33,4 +33,5 @@ if __name__ == '__main__':
         """resets storage after each request"""
         storage.close()
 
-    app.run(host='0.0.0.0', port='5000')
+    app.debug = True
+    app.run(debug=True, host='0.0.0.0', port='5000')
