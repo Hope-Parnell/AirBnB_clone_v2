@@ -7,8 +7,8 @@
         {% if states is defined %}
         <H1>States</H1>
         <UL>
-            {% for State in states.values() | sort(attribute="name") %}
-            <LI>State: {{ State.id }}: <B>{{ State.name }}</B></LI>
+            {% for s in states.values() | sort(attribute="name") %}
+            <LI>State: {{ s.id }}: <B>{{ s.name }}</B></LI>
             {% endfor %}
         </UL>
         {% elif state != None %}
