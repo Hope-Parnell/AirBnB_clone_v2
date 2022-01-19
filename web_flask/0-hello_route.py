@@ -9,6 +9,7 @@ if __name__ == '__main__':
     app.url_map.strict_slashes = False
 
     @app.route('/')
+    @app.route('/airbnb-onepage/')
     def hello():
         """
         sets the route for '/'
